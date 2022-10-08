@@ -11,7 +11,7 @@ export const Accounts = () => {
         <div className='accLink'>
           <ul>
             <li className='d-inline border-0 text-orange-400 bg-black px-6 py-1 rounded-full mx-2'>
-              <Link to='/'>Home</Link>
+              <Link to='/ '>Home</Link>
             </li>
             <li className='d-inline border-0 text-orange-400 bg-black px-6 py-1 rounded-full mx-2'>
               <Link to='/Accounts/SocialAccounts'>Social Account</Link>

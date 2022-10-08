@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 export const Login = () => {
   const [user, setUser] = useState({
@@ -8,13 +9,17 @@ export const Login = () => {
   })
   const [formError, setFormError] = useState({})
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setUser({ ...user, [name]: value })
   }
   const handleSubmit = (e) => {
     e.preventDefault()
+    
     setFormError(validate(user))
+    
   }
 
   const validate = (form) => {
@@ -34,7 +39,12 @@ export const Login = () => {
     } else {
       error.password = ''
     }
-
+    
+    if(form.email && form.password) {
+      navigate('/')
+    } else{
+      return error
+    }
     return error
   }
   return (
@@ -88,7 +98,9 @@ export const Login = () => {
                   </svg>
                 </span>
               </div>
-              {formError.email && <span>{formError.email}</span>}
+              {formError.email && (
+                <span style={{ color: 'red' }}>{formError.email}</span>
+              )}
             </div>
 
             <div>
@@ -103,7 +115,6 @@ export const Login = () => {
                   onChange={handleChange}
                   className='w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm bg-gray-300'
                   placeholder='Enter password'
-                  
                 />
 
                 <span className='absolute inset-y-0 inline-flex items-center right-4'>
@@ -129,7 +140,9 @@ export const Login = () => {
                   </svg>
                 </span>
               </div>
-              {formError.password && <span>{formError.password}</span>}
+              {formError.password && (
+                <span style={{ color: 'red' }}>{formError.password}</span>
+              )}
             </div>
 
             <div className='flex items-center justify-between'>
@@ -140,19 +153,12 @@ export const Login = () => {
                 </a>
               </p>
 
-              <Link
-                to='/'
-                className='inline-block px-5 py-3 ml-3 text-sm font-medium text-black bg-orange-300 rounded-lg'
-              >
-                Sign in
-              </Link>
-              {/* <button
+              <button
                 type='submit'
                 className='inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg'
-                // onClick={() => handleClick('home')}
               >
                 Sign in
-              </button> */}
+              </button>
             </div>
           </form>
         </div>

@@ -17,9 +17,7 @@ export const MyLink = () => {
         <Link to='/Contact'>Contact</Link>
         <Link to='/Email'>Email</Link>
         <Link to='/Accounts'>Accounts</Link>
-        <Link to='/Login' className='logout'>
-          Logout
-        </Link>
+        <Link to='/Login' className='logout'>Logout</Link>
       </nav>
     </div>
   )
