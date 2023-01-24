@@ -14,10 +14,12 @@ export const MyLink = () => {
         <Link to='/About'>About</Link>
         <Link to='/Product'>Product</Link>
         <Link to='/Founders'>Founders</Link>
-        <Link to='/Contact'>Contact</Link>
+        <Link to='/FeaturedTechies'>Contact</Link>
         <Link to='/Email'>Email</Link>
         <Link to='/Accounts'>Accounts</Link>
-        <Link to='/Login' className='logout'>Logout</Link>
+        <Link to='/Login' className='logout'>
+          Logout
+        </Link>
       </nav>
     </div>
   )

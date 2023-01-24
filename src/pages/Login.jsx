@@ -40,7 +40,7 @@ export const Login = () => {
       error.password = ''
     }
     
-    if(form.email && form.password) {
+    if(form.email && form.password ) {
       navigate('/')
     } else{
       return error
@@ -148,14 +148,14 @@ export const Login = () => {
             <div className='flex items-center justify-between'>
               <p className='text-sm text-gray-400'>
                 No account?
-                <a href='#' className='underline text-emerald-400'>
+                <a href='#' className='underline text-emerald-400 '>
                   Sign up
                 </a>
               </p>
 
               <button
                 type='submit'
-                className='inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg'
+                className='inline-block px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg border-2 border-emerald-400'
               >
                 Sign in
               </button>

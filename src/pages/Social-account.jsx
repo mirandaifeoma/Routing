@@ -17,7 +17,6 @@ export const SocialAccounts = () => {
     <div>
       <Accounts />
       <div>
-        lor
         <div className='bg-scroll' style={myStyle}>
           <ul className='pl-8 list-outside'>
             <li className='list-disc marker:text-yellow-400 '>
